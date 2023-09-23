@@ -1,0 +1,14 @@
+{% extends "components/base.html" %}
+{% block content %}
+
+{{ teste }}
+
+{{ request.user }}
+
+{{ request.user.is_authenticated }}
+
+{% for i in range %}
+    AQUI <br>
+{% endfor %}
+
+{% endblock content %}
