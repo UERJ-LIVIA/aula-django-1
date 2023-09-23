@@ -22,6 +22,8 @@ def cadastro_view(request):
 
 def login_view(request):
 
+    print("AQUI")
+
     if request.POST and "username_login" in request.POST:
         user = auth.authenticate(
             username= request.POST["username_login"],

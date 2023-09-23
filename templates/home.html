@@ -1,14 +1,31 @@
 {% extends "components/base.html" %}
 {% block content %}
+{% load static %}
 
-{{ teste }}
+{% if request.user.is_authenticated %}
+    <h1>Bem vindo {{ request.user }}</h1>
+{% else %}
+    <h1>Você não está logado</h1>
+{% endif %}
 
-{{ request.user }}
-
-{{ request.user.is_authenticated }}
-
-{% for i in range %}
-    AQUI <br>
-{% endfor %}
+<div class="row">
+    {% for i in range %}
+        <div class="col-xl-3 col-lg-6 col-md-12 mb-3">
+            <div class="shadow-sm border rounded p-3 bg-white">
+                <div class="row">
+                    <div class="col">
+                        <span class="d-block"><b>Nome:</b> Fulano </span>
+                        <span class="d-block"><b>Data de saída:</b> 18:30</span>
+                        <span class="d-block"><b>Info:</b> Carro preto</span>
+                    </div>
+                    <div class="col d-flex justify-content-end">
+                        <img class="border rounded" src="{% static 'img/default.png' %}" width="100px" height="100px">
+                    </div>
+                </div>
+            <button class="btn btn-primary w-100 mt-3">Reservar carona</button>
+            </div>
+        </div>
+    {% endfor %}
+</div>
 
 {% endblock content %}
