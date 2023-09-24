@@ -26,5 +26,5 @@ urlpatterns = [
     path('', home_view, name="home_view"),
     path('accounts/', include('accounts.urls')),
     path('accounts/api/', include('accounts.api.urls')),
-    # path('receitas/api/', include('receitas.api.urls')),
+    path('receitas/api/', include('receitas.api.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
