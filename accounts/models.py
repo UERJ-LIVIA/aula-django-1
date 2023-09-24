@@ -13,5 +13,3 @@ class Perfil(models.Model):
     usuario     = models.OneToOneField(User, on_delete=models.CASCADE, related_name="perfil")
     nome        = models.TextField()
     categoria   = models.CharField(max_length=150, choices=Categoria.choices, default=Categoria.PACIENTE)
-
-
